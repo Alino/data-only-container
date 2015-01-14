@@ -1,0 +1,16 @@
+[Unit]
+Description=Data Only Container Service
+Requires=docker.service
+After=docker.service
+[Service]
+TimeoutStartSec=0
+ExecStartPre=-/usr/bin/docker kill data-only-container%i
+ExecStartPre=-/usr/bin/docker rm -v data-only-container%i
+ExecStartPre=-/usr/bin/docker pull lab80/data-only-container
+ExecStart=/usr/bin/docker run --name data-only-container%i lab80/data-only-container
+ExecStop=/usr/bin/docker stop data-only-container%i
+[Install]
+WantedBy=multi-user.target
+[X-Fleet]
+X-Conflicts=data-only-container@*.service
+MachineMetadata=role=moin
