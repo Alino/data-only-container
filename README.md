@@ -20,7 +20,7 @@ Read [this](http://container42.com/2014/11/03/docker-indepth-volumes/) and take 
 
 1. from dockerfile
 
-`docker build -t lab80/data-only-container .` and then `docker push lab80/data-only-container` (assumes that you are running boot2docker locally)
+`docker build -t your_name/data-only-container .` and then `docker push your_name/data-only-container` (assumes that you are running boot2docker locally)
 
 2. from other base image
 
@@ -38,14 +38,14 @@ $ docker ps -a
 CONTAINER ID        IMAGE               COMMAND             CREATED              STATUS                     PORTS               NAMES
 215d2696e8ad        ubuntu:14.04        /bin/bash     About a minute ago   Exited
 
-$ docker commit 215d2696e8ad lab80/data-only-container
+$ docker commit 215d2696e8ad your_name/data-only-container
 c5ad7718fc0e20fe4bf2c8a9bfade4db8617a25366ca5b64be2e1e8aa0de6e52
-$ sudo docker push lab80/data-only-container
+$ sudo docker push your_name/data-only-container
 ```
 
 ## Mongodb
 
-run the container first `docker run --name mongodb-data lab80/data-only-container`. 
+run the container first `docker run --name mongodb-data your_name/data-only-container`. 
 
 
 there is db/mongodb.conf file
