@@ -2,18 +2,33 @@ Data Only Container
 --------------------
 
 This is a data-only Docker image. concept in two lines. first line is for running data only container.
+
 ```
-$ docker run --name mongodb-data --entrypoint /bin/echo mongodb Data-only container for mongodb
+$ docker run --name mongo-data jaigouk/data-only-container
 ```
 
 And second line is for running mongodb
 ```
-$ docker run -p 27017 --name mongodb --volumes-from mongodb-data mongodb:latest
+$ docker run -p 27017 --name mongodb --volumes-from mongo-data mongodb:latest
 ```
+
+
+## About Docker Volume
 
 Read [this](http://container42.com/2014/11/03/docker-indepth-volumes/) and take a look at [Docker Volume Manager](https://github.com/cpuguy83/docker-volumes)
 
-
+> Volumes are not for persitance.
+> 
+> Volumes decouple the life of the data being stored in them from the life of the container that created them. This makes it so you can docker rm my_container and your data will not be removed.
+>
+>A volume can be created in two ways:
+>
+>>1. Specifying VOLUME /some/dir in a Dockerfile
+>>2. Specying it as part of your run command as docker run -v /some/dir
+>
+>Either way, these two things do exactly the same thing. It tells Docker to create a directory on the host, within the docker root path (by default /var/lib/docker), and mount it to the path you've specified (/some/dir above). When you remove the container using this volume, the volume itself continues to live on.
+> 
+> Basically, since volumes are not yet first-class citizens in Docker they can be difficult to manage. Most people tend to have extra volumes laying around which are not in use because they didn't get removed with the container they were used with.
 
 
 ## Building this image
@@ -43,7 +58,7 @@ c5ad7718fc0e20fe4bf2c8a9bfade4db8617a25366ca5b64be2e1e8aa0de6e52
 $ sudo docker push your_name/data-only-container
 ```
 
-## Mongodb
+## Using with Mongodb
 
 run the container first `docker run --name mongodb-data your_name/data-only-container`. 
 
