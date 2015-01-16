@@ -110,6 +110,10 @@ jaigouk/docker-volt-mongodb
 
 ## Usefull resources
 
+* [Docker In-depth: Volumes](http://container42.com/2014/11/03/docker-indepth-volumes/)
+
+* [Data-only container madness](http://container42.com/2014/11/18/data-only-container-madness/)
+
 * [MoinMoin in Production on CoreOS - Part6: Further thinking Data Volume Container](https://masato.github.io/2014/10/20/docker-moinmoin-idcf-coreos-volumes-further-thinking/)
 
 * [Creating a data volume container with fleet](https://masato.github.io/2014/11/03/creating-a-data-volume-container-with-fleet/)
@@ -118,12 +122,15 @@ jaigouk/docker-volt-mongodb
 
 * [How to correctly remove volume directories from Docker](https://masato.github.io/2014/11/05/how-to-correctly-remove-volume-directories/)
 
-* [Docker In-depth: Volumes](http://container42.com/2014/11/03/docker-indepth-volumes/)
 
-* [Data-only container madness](http://container42.com/2014/11/18/data-only-container-madness/)
 
 
 ## Further considerations
+
+#### ZFS on CoreOS
+
+* [How to get ZFS running on CoreOS](https://github.com/ClusterHQ/flocker/blob/zfs-on-coreos-tutorial-667/docs/experimental/zfs-on-coreos.rst)
+* [Flocker user discussion ](https://groups.google.com/forum/#!topic/flocker-users/taBOUyX3W8A)
 
 #### Sync gateway
 https://tleyden.github.io/blog/2014/12/15/running-a-sync-gateway-cluster-under-coreos-on-aws/

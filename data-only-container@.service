@@ -13,4 +13,3 @@ ExecStop=/usr/bin/docker stop data-only-container%i
 WantedBy=multi-user.target
 [X-Fleet]
 X-Conflicts=data-only-container@*.service
-MachineMetadata=role=moin
