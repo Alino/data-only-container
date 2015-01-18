@@ -1,6 +1,8 @@
 Data Only Container
 --------------------
 
+[![Docker Repository on Quay.io](https://quay.io/repository/jaigouk/data-only-container/status "Docker Repository on Quay.io")](https://quay.io/repository/jaigouk/data-only-container)
+
 This is a data-only Docker image. concept in two lines. first line is for running data only container.
 
 ```
