@@ -2,5 +2,5 @@
 while true
 do
   echo "Server on fire!"
-  sleep 2
+  sleep 30
 done
