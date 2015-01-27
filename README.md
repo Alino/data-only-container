@@ -14,6 +14,13 @@ And second line is for running mongodb
 $ docker run -p 27017 --name mongodb --volumes-from mongo-data mongodb:latest
 ```
 
+modify dockerfile and add ssh keys
+
+```
+## Install an SSH of your choice.
+ADD your_key.pub /tmp/your_key.pub
+RUN cat /tmp/your_key.pub >> /root/.ssh/authorized_keys && rm -f /tmp/your_key.pub
+```
 
 ## About Docker Volume
 
