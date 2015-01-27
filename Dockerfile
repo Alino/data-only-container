@@ -13,6 +13,7 @@ RUN echo "copy files"
 COPY forever.sh /usr/local/bin/
 ADD db /data/db
 ADD droneio /data/droneio
+ADD jenkins /data/jenkins
 
 VOLUME ["/data"]
 
