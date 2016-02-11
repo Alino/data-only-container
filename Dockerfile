@@ -1,6 +1,10 @@
 FROM debian:jessie
 
+# mongo and mongod needs libssl.so.10
 RUN apt-get update && apt-get install -y libssl1.0.0 libssl-dev
+RUN cd /lib/x86_64-linux-gnu \
+    && ln -s libssl.so.1.0.0 libssl.so.10 \
+    && ln -s libcrypto.so.1.0.0 libcrypto.so.10
 
 RUN echo "create lab80 user and directories" \
     && useradd lab80 \
