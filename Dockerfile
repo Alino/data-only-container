@@ -4,7 +4,9 @@ FROM debian:jessie
 RUN apt-get update && apt-get install -y libssl1.0.0 libssl-dev
 RUN cd /lib/x86_64-linux-gnu \
     && ln -s libssl.so.1.0.0 libssl.so.10 \
-    && ln -s libcrypto.so.1.0.0 libcrypto.so.10
+    && ln -s libcrypto.so.1.0.0 libcrypto.so.10 \
+    && ln -s /lib/x86_64-linux-gnu/libssl.so.1.0.0 /usr/lib/libssl.so.10 \
+    && ln -s /lib/x86_64-linux-gnu/libcrypto.so.1.0.0 /usr/lib/libcrypto.so.10
 
 RUN echo "create lab80 user and directories" \
     && useradd lab80 \
