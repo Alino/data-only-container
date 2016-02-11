@@ -1,7 +1,6 @@
 FROM debian:jessie
-MAINTAINER "Jaigouk Kim" <ping@jaigouk.kim>
 
-RUN echo "crete lab80 user and directories" \
+RUN echo "create lab80 user and directories" \
     && useradd lab80
     && mkdir /data
     && chown -R lab80:lab80 /data
