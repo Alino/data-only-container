@@ -6,8 +6,8 @@ After=docker.service
 TimeoutStartSec=0
 ExecStartPre=-/usr/bin/docker kill data-only-container%i
 ExecStartPre=-/usr/bin/docker rm -v data-only-container%i
-ExecStartPre=-/usr/bin/docker pull quay.io/jaigouk/data-only-container:latest
-ExecStart=/usr/bin/docker run --name data-only-container%i quay.io/jaigouk/data-only-container:latest
+ExecStartPre=-/usr/bin/docker pull alino/data-only-container:latest
+ExecStart=/usr/bin/docker run --name data-only-container%i alino/data-only-container:latest
 ExecStop=/usr/bin/docker stop data-only-container%i
 [Install]
 WantedBy=multi-user.target
