@@ -19,6 +19,7 @@ USER lab80
 RUN echo "copy files"
 COPY forever.sh /usr/local/bin/
 ADD db /data/db
+ADD configdb /data/configdb
 ADD droneio /data/droneio
 ADD jenkins /data/jenkins
 
